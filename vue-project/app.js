@@ -3,9 +3,9 @@ const app = Vue.createApp({
     return {
       showBooks: true,
       books: [
-        { title: "The Final Empire", author: "Brandon Sanderson" },
-        {title: 'the way o kings', author: 'Patrick Rothfuss'},
-        {title: 'three tales of a chemical romance ', author: 'Irvine Wells'}]
+        { title: "The Final Empire", author: "Brandon Sanderson" , img: 'assets/1.jpg' },
+        {title: 'the way o kings', author: 'Patrick Rothfuss', img: 'assets/2.jpg' },
+        {title: 'three tales of a chemical romance ', author: 'Irvine Wells', img: 'assets/3.jpg' }]
     };
   },
   methods: {
