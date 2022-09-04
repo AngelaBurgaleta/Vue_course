@@ -3,10 +3,11 @@ const app = Vue.createApp({
     return {
       showBooks: true,
       books: [
-        {title: "The Final Empire", author: "Brandon Sanderson" , img: 'src/assets/1.jpg', isFav: true  },
-        {title: 'the way o kings', author: 'Patrick Rothfuss', img: 'src/assets/2.jpg', isFav: false },
-        {title: 'three tales of a chemical romance ', author: 'Irvine Wells', img: 'src/assets/3.jpg', isFav: false }]
-    };
+        { title: "The Final Empire", author: "Brandon Sanderson", img: 'src/assets/1.jpg', isFav: true },
+        { title: 'the way o kings', author: 'Patrick Rothfuss', img: 'src/assets/2.jpg', isFav: true },
+        { title: 'three tales of a chemical romance ', author: 'Irvine Wells', img: 'src/assets/3.jpg', isFav: false }
+      ]
+    }
   },
   methods: {
     toggleShowBooks() {
@@ -14,7 +15,12 @@ const app = Vue.createApp({
     },
     toggleIsFav(book) {
       book.isFav = !book.isFav;
-    },
+    }
+  },
+    computed: {
+    filteredBooks() {
+      return this.books.filter((book) => book.isFav)
+    }
   }
 });
 
