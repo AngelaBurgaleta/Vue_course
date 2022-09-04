@@ -36,10 +36,16 @@
   <div id="app">
     <div v-if="showBooks">
       <ul>
-        <li v-for="book in books" :class="{ fav: book.isFav }">
+        <li v-for="book in books" :class="{ fav: book.isFav }" >
           <img :src="book.img" :alt="book.title">
           <h3>{{ book.title }}</h3>
           <p>{{ book.author }}</p>
+          
+          <button v-on:click="toggleIsFav(book)">
+            <span v-if="!book.isFav">Add to favs</span>
+            <span v-else>Remove from favs</span>
+          </button>
+          
         </li>
       </ul>
     </div>
