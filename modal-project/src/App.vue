@@ -1,13 +1,17 @@
 <template>
   <!-- <h1>My First Vue App!</h1> -->
   <h1>{{ title }}</h1>
+  <Modal/>
   <input type="text" ref="name" />
   <button @click="handleClick">click me</button>
 </template>
 
 <script>
+import Modal from './components/Modal.vue'
+
 export default {
   name: "App",
+  components: {Modal},
   data() {
     return {
       title: "My First Vue App!",
@@ -22,6 +26,9 @@ export default {
   }
 }
 </script>
+
+
+
 
 <style>
 #app {
